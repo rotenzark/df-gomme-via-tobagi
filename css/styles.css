@@ -1,0 +1,293 @@
+/* PLUMBING_V 1 — reset tecnico canonico (Toolkit/boilerplate/plumbing.css) */
+[hidden] { display: none !important; }
+img { max-width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ══════════ D.F. GOMME — «Veloce. Efficace. Onesto.» ══════════
+   Via Walter Tobagi 13, alla Barona. L'identità è la loro facciata: le insegne gialle con le lettere rosse («ASSISTENZA
+   PNEUMATICI») e blu («ASSETTI SPORTIVI · FRENI · MARMITTE»), il muro di piastrelle brune, il nero delle gomme. L'apertura è quel
+   muro, con la frase di un cliente appesa come un'insegna e la firma: la gomma da leggere (_dfg_firma.mjs), che si gira e spiega
+   ogni sigla del fianco. */
+:root {
+  --giallo: #F4D13D;
+  --rosso: #D2353B;
+  --rosso-testo: #B3242B;
+  --blu: #2F3480;
+  --gomma: #161616;
+  --gomma-2: #232323;
+  --muro: #4E4744;
+  --fuga: #3C3634;
+  --bianco: #FFFFFF;
+  --cemento: #EFECE8;
+  --grigio: #5C5754;
+  --riga: #DAD5D0;
+  --cornice: #3B3B3B;
+  --f-titoli: 'Fira Sans Extra Condensed', 'Arial Narrow', Arial, sans-serif;
+  --f-testo: 'Noto Sans', 'Segoe UI', Arial, sans-serif;
+  --gutter: 16px;
+  --testata-h: 64px;
+  /* il muro della facciata: piastrelle strette e alte, sfalsate a tre file, con le fughe scure */
+  --piastrelle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='184'%3E%3Crect width='90' height='184' fill='%233C3634'/%3E%3Crect x='0' y='0' width='28' height='90' fill='%234E4744'/%3E%3Crect x='0' y='92' width='28' height='90' fill='%23534B48'/%3E%3Crect x='30' y='0' width='28' height='44' fill='%234A4341'/%3E%3Crect x='30' y='46' width='28' height='90' fill='%23504846'/%3E%3Crect x='30' y='138' width='28' height='46' fill='%234A4341'/%3E%3Crect x='60' y='0' width='28' height='21' fill='%23514947'/%3E%3Crect x='60' y='23' width='28' height='90' fill='%234B4442'/%3E%3Crect x='60' y='115' width='28' height='69' fill='%23514947'/%3E%3C/svg%3E");
+}
+@media (min-width: 760px) { :root { --gutter: 24px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* il testo è Noto Sans, mai sotto i 15 px: Maven Pro (il primo scelto) ha gli accenti gravi corti e attaccati, a 400 e 14 px la «è»
+   spariva e a 450–500 l'accento toccava la lettera (accenti-check) */
+body { margin: 0; color: var(--gomma); font: 400 1rem/1.62 var(--f-testo); background: var(--bianco); }
+a { color: var(--blu); }
+b, strong { font-weight: 700; }
+.salta { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 10px 16px; background: #fff; color: var(--gomma); font-weight: 700; text-decoration: none; }
+.salta:focus { top: 10px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+section[id] { scroll-margin-top: calc(var(--testata-h) + 14px); }
+.intero { white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--blu); outline-offset: 2px; }
+/* finché i caratteri non arrivano il ripiego è più largo: una parola lunga va a capo invece di uscire (riserva-check, #233) */
+h1, h2, h3, .marchio__nome, .piede__insegna { overflow-wrap: anywhere; }
+
+/* ── la testata: la striscia gialla dell'insegna ── */
+.testata { position: sticky; top: 0; z-index: 50; background: var(--giallo); border-bottom: 3px solid var(--gomma); }
+.testata__dentro { display: flex; align-items: center; gap: 10px; max-width: 1200px; margin: 0 auto; padding: 8px var(--gutter); }
+.marchio { display: flex; align-items: center; gap: 9px; min-width: 0; flex: 1 1 auto; color: var(--gomma); text-decoration: none; }
+.marchio__gomma { width: 38px; height: 38px; flex: none; }
+.marchio__battistrada { fill: none; stroke: var(--gomma); stroke-width: 7; }
+.marchio__cerchio { fill: #B9BEC4; stroke: var(--gomma); stroke-width: 1.5; }
+.marchio__mozzo { fill: var(--gomma); }
+.marchio__nome { display: flex; flex-direction: column; min-width: 0; }
+.marchio__df { font: 800 1.42rem/.95 var(--f-titoli); letter-spacing: .02em; text-transform: uppercase; color: var(--rosso-testo); }
+.marchio__sotto { margin-top: 2px; font: 700 .72rem/1.1 var(--f-titoli); letter-spacing: .12em; text-transform: uppercase; color: var(--blu); }
+.voci { display: none; }
+.testata__azioni { margin-left: auto; display: flex; align-items: center; gap: 6px; flex: none; }
+.lingue { display: flex; }
+.lingue button { min-width: 34px; min-height: 38px; padding: 0 5px; border: 2px solid var(--gomma); background: transparent; color: var(--gomma); font: 700 .82rem var(--f-testo); cursor: pointer; }
+.lingue button + button { border-left: 0; }
+.lingue button.is-on { background: var(--gomma); color: var(--giallo); }
+.chiama { display: none; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 4px; background: var(--rosso-testo); color: #fff; font: 700 1rem var(--f-testo); text-decoration: none; }
+.chiama:hover { background: var(--gomma); }
+.burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 2px solid var(--gomma); border-radius: 4px; background: transparent; cursor: pointer; }
+.burger span { display: block; height: 2px; background: var(--gomma); transition: transform .2s, opacity .2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-mobile { position: fixed; top: var(--testata-h); left: 0; right: 0; z-index: 49; max-height: calc(100vh - var(--testata-h)); overflow-y: auto; padding: 10px var(--gutter) 22px; background: var(--giallo); border-bottom: 3px solid var(--gomma); box-shadow: 0 10px 24px rgba(22, 22, 22, .25); }
+.menu-mobile a { display: block; padding: 12px 2px 10px; border-bottom: 1px solid rgba(22, 22, 22, .18); color: var(--gomma); font: 800 1.5rem/1.2 var(--f-titoli); letter-spacing: .02em; text-transform: uppercase; text-decoration: none; }
+.menu-mobile__tel { display: flex !important; justify-content: center; gap: 8px; margin-top: 14px; border: 0 !important; border-radius: 4px; background: var(--rosso-testo); color: #fff !important; font: 700 1.1rem var(--f-testo) !important; text-transform: none !important; }
+
+/* ── l'apertura: il muro di piastrelle ── */
+.apertura { background: var(--muro) var(--piastrelle) repeat; color: var(--bianco); }
+.apertura__dentro { display: grid; gap: 34px; max-width: 1200px; margin: 0 auto; padding: 32px var(--gutter) 48px; }
+.apertura__sopra { margin: 0 0 16px; font: 700 .92rem/1.4 var(--f-titoli); letter-spacing: .14em; text-transform: uppercase; color: #F2EEEA; }
+/* la frase del cliente appesa come un'insegna: gialla, lettere rosse, la cornice grigia */
+.insegna { display: inline-block; margin: 0; padding: 14px 22px 12px; background: var(--giallo); box-shadow: inset 0 0 0 3px var(--cornice), 0 16px 30px rgba(0, 0, 0, .35); font: 800 clamp(2.9rem, 1.7rem + 4.6vw, 5.4rem)/.94 var(--f-titoli); letter-spacing: .01em; text-transform: uppercase; color: var(--rosso-testo); }
+.insegna__riga { display: block; }
+.apertura__chi { margin: 12px 0 18px; font-size: .95rem; color: #E8E3DF; }
+.apertura__chi::before { content: '— '; }
+.apertura__nome { margin: 0 0 8px; font: 600 1.1rem/1.3 var(--f-testo); color: #F2EEEA; }
+.apertura__nome b { font: 800 1.7rem/1 var(--f-titoli); letter-spacing: .02em; text-transform: uppercase; color: var(--giallo); }
+.apertura__frase { max-width: 34em; margin: 0 0 18px; font-size: 1.1rem; color: #FAF7F4; }
+.voto { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin: 0; }
+.voto__n { font: 800 2.1rem/1 var(--f-titoli); }
+.voto__su { font-size: 1rem; }
+.apertura .voto__n { color: var(--giallo); }
+.apertura .voto__su { color: #EDE8E4; }
+/* le stelle: una maschera SVG ripetuta e un gradiente fino a --voto (niente testo tagliato, #232) */
+.stelle { --piena: var(--giallo); --vuota: rgba(255, 255, 255, .28); display: inline-block; width: 5.5em; height: 1.05em; font-size: 1.05rem; vertical-align: -.1em; background: linear-gradient(90deg, var(--piena) calc(var(--voto, 1) * 100%), var(--vuota) 0); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 21'%3E%3Cpath d='M11 1l2.9 6.2 6.8.8-5 4.6 1.3 6.7L11 16l-6 3.3 1.3-6.7-5-4.6 6.8-.8z'/%3E%3C/svg%3E") 0 0 / 1.1em 1.05em repeat-x; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 21'%3E%3Cpath d='M11 1l2.9 6.2 6.8.8-5 4.6 1.3 6.7L11 16l-6 3.3 1.3-6.7-5-4.6 6.8-.8z'/%3E%3C/svg%3E") 0 0 / 1.1em 1.05em repeat-x; }
+.stato { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; font-weight: 700; }
+.stato::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .5; flex: none; }
+.stato.is-aperto::before { background: var(--giallo); opacity: 1; box-shadow: 0 0 0 3px rgba(244, 209, 61, .3); }
+.apertura .stato { color: #F2EEEA; }
+.apertura__azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.bottone { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid currentColor; border-radius: 4px; background: transparent; color: var(--bianco); font: 700 1.04rem/1.1 var(--f-testo); text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
+.bottone:hover { background: var(--bianco); border-color: var(--bianco); color: var(--gomma); }
+.bottone--pieno { border-color: var(--giallo); background: var(--giallo); color: var(--gomma); }
+.bottone--pieno:hover { border-color: var(--bianco); background: var(--bianco); }
+.bottone--rosso { border-color: var(--rosso-testo); background: var(--rosso-testo); color: #fff; }
+.bottone--rosso:hover { border-color: var(--gomma); background: var(--gomma); color: #fff; }
+.bottone--scuro { border-color: var(--gomma); color: var(--gomma); }
+.bottone--scuro:hover { background: var(--gomma); border-color: var(--gomma); color: #fff; }
+
+/* ── la firma: la gomma da leggere ── */
+.gomma { display: grid; gap: 18px; margin: 0; }
+.gomma__svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; overflow: visible; -webkit-user-select: none; user-select: none; filter: drop-shadow(0 14px 20px rgba(0, 0, 0, .42)); }
+/* il dito: in verticale la pagina scorre, in orizzontale gira la gomma (il touch-action conta sull'<svg>, non sui suoi <g>, #242) */
+.js .gomma__svg { touch-action: pan-y; }
+.gomma__spalla { fill: #1D1D1D; }
+.gomma__tasselli { fill: none; stroke: #2B2B2B; stroke-width: 12; }
+.gomma__fianco { fill: var(--gomma); }
+.gomma__filo { fill: none; stroke: #2E2E2E; stroke-width: 1.5; }
+.gomma__ovale-bordo { fill: none; stroke: #3C3C3C; stroke-width: 31; stroke-linecap: round; }
+.gomma__ovale { fill: none; stroke: #1E1E1E; stroke-width: 27; stroke-linecap: round; }
+.sigla, .scritta { font-family: var(--f-titoli); font-weight: 800; }
+.sigla { fill: #D9D9D9; transition: fill .2s; }
+.sigla--segno { fill: #A8A8A8; }
+.sigla.is-letta { fill: var(--giallo); }
+.scritta { fill: #ABABAB; font-weight: 700; }
+.cerchio__tallone { fill: #0E0E0E; }
+.cerchio__bordo { fill: url(#gommaLega); }
+.cerchio__canale { fill: #2B2E33; }
+.cerchio__razze { fill: url(#gommaLega); stroke: #6B7179; stroke-width: 1; stroke-linejoin: round; }
+.cerchio__mozzo { fill: #C7CBD0; stroke: #899098; stroke-width: 1.5; }
+.cerchio__bullone { fill: #3A3E44; }
+.cerchio__tappo { fill: #6E747C; }
+.cerchio__valvola { fill: #111111; }
+.gomma__freccia { fill: var(--giallo); stroke: var(--gomma); stroke-width: 2.5; stroke-linejoin: round; }
+.js .gomma__ruota { cursor: grab; }
+.js .gomma__ruota.preso { cursor: grabbing; }
+/* la legenda: una riga per sigla; quella letta si accende di giallo, come la sigla sulla gomma */
+.legenda { display: grid; gap: 6px 14px; margin: 0; padding: 0; list-style: none; }
+.voce__corpo { display: flex; align-items: center; gap: 12px; padding: 5px 10px 5px 5px; border-radius: 4px; font: 500 .98rem/1.3 var(--f-testo); color: #F6F2EE; transition: background .15s, color .15s; }
+.voce__sigla { display: inline-flex; align-items: center; justify-content: center; flex: none; min-width: 3.1em; height: 34px; padding: 0 6px; border: 2px solid var(--giallo); border-radius: 3px; font: 800 1.12rem/1 var(--f-titoli); letter-spacing: .02em; color: var(--giallo); }
+.voce.is-letta .voce__corpo { background: var(--giallo); color: var(--gomma); }
+.voce.is-letta .voce__sigla { border-color: var(--gomma); background: var(--gomma); color: var(--giallo); }
+.voce__corpo[role="button"] { cursor: pointer; }
+.voce__corpo[role="button"]:hover { background: rgba(0, 0, 0, .28); }
+.voce.is-letta .voce__corpo[role="button"]:hover { background: var(--giallo); }
+.voce__corpo:focus-visible { outline-color: var(--giallo); }
+.gomma__nota { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 12px; margin: 16px 0 0; font-size: .96rem; color: #F2EEEA; text-align: center; }
+.gomma__rileggi { min-height: 40px; padding: 0 16px; border: 2px solid var(--giallo); border-radius: 4px; background: transparent; color: var(--giallo); font: 700 .95rem var(--f-testo); cursor: pointer; }
+.gomma__rileggi:hover { background: var(--giallo); color: var(--gomma); }
+.gomma__rileggi:focus-visible { outline-color: var(--giallo); }
+.gomma__esempio { margin: 8px 0 0; font-size: .95rem; color: #E1DBD6; text-align: center; }
+/* senza JS la gomma non si gira e non si legge: freccia, invito e bottone nascosti col loro posto (#240, firma-posto-check) */
+.no-js .gomma__freccia, .no-js .gomma__invito, .no-js .gomma__rileggi { visibility: hidden; }
+
+/* ── i capitoli ── */
+.capitolo { max-width: 1120px; margin: 0 auto; padding: 68px var(--gutter) 66px; }
+.capitolo--cemento, .capitolo--gomma { max-width: none; padding-left: max(var(--gutter), calc((100% - 1120px) / 2)); padding-right: max(var(--gutter), calc((100% - 1120px) / 2)); }
+.capitolo--cemento { background: var(--cemento); }
+.capitolo--gomma { background: var(--gomma); color: var(--bianco); }
+.etichetta { display: inline-block; margin: 0; padding: 3px 10px 2px; background: var(--blu); font: 700 .86rem/1.3 var(--f-titoli); letter-spacing: .16em; text-transform: uppercase; color: #fff; }
+.capitolo--gomma .etichetta { background: var(--giallo); color: var(--gomma); }
+.capitolo__titolo { max-width: 20em; margin: 12px 0 30px; font: 800 clamp(2.1rem, 1.3rem + 2.7vw, 3.5rem)/1 var(--f-titoli); letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
+figure { margin: 0; }
+.foto { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.foto img { display: block; width: 100%; height: auto; }
+
+/* cosa fa: tre insegne gialle con le viti agli angoli */
+.insegne { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; }
+.cartello { position: relative; padding: 26px 24px 22px; background-color: var(--giallo); background-image: radial-gradient(circle at 12px 12px, #7C7C7C 0 3px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) 12px, #7C7C7C 0 3px, transparent 3.5px), radial-gradient(circle at 12px calc(100% - 12px), #7C7C7C 0 3px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #7C7C7C 0 3px, transparent 3.5px); box-shadow: inset 0 0 0 3px var(--cornice); }
+.cartello__titolo { margin: 0 0 10px; font: 800 1.75rem/1.02 var(--f-titoli); letter-spacing: .01em; text-transform: uppercase; color: var(--rosso-testo); }
+.cartello__testo { margin: 0; font-weight: 600; color: var(--blu); }
+
+/* l'officina: le due foto loro */
+.officina { display: grid; gap: 24px; align-items: start; }
+.officina figcaption { margin-top: 8px; font-size: .95rem; color: var(--grigio); }
+.officina__fuori img, .officina__dentro img { box-shadow: 0 0 0 3px var(--cornice); }
+.officina__testo p { margin: 0 0 16px; font-size: 1.08rem; }
+.officina__dentro { max-width: 300px; margin-top: 8px; }
+
+/* dicono: sul nero della gomma */
+.voto--centro { margin: -10px 0 30px; }
+.capitolo--gomma .voto__n { color: var(--giallo); }
+.capitolo--gomma .voto__su { color: #E4E4E4; }
+.recensioni { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; align-items: start; }
+.recensione { position: relative; padding: 36px 22px 18px; border: 1px solid #353535; border-radius: 4px; background: var(--gomma-2); }
+.recensione::before { content: '\201C'; position: absolute; left: 16px; top: -2px; font: 800 4rem/1 var(--f-titoli); color: var(--giallo); }
+.recensione__testo { margin: 0 0 12px; font-size: 1.02rem; line-height: 1.55; color: #F0F0F0; }
+.recensione__chi { margin: 0; font-size: .9rem; color: #C9C9C9; }
+.recensione__chi b { display: block; font-size: 1.02rem; color: var(--bianco); }
+.dicono__nota { max-width: 46em; margin: 24px 0 0; font-size: .95rem; color: #D2D2D2; }
+.dicono__nota a { font-weight: 700; color: var(--giallo); }
+
+/* orari e dove: il cartello dell'orario e la mappa */
+.orari { display: grid; gap: 30px; align-items: start; }
+.tabella { background: var(--bianco); box-shadow: inset 0 0 0 3px var(--cornice), 0 10px 24px rgba(22, 22, 22, .12); padding: 3px; }
+.tabella__testa { margin: 0; padding: 12px 18px 10px; background: var(--giallo); font: 800 1.9rem/1 var(--f-titoli); letter-spacing: .04em; text-transform: uppercase; color: var(--rosso-testo); }
+.stato--tabella { margin: 14px 18px 4px; color: var(--grigio); font-size: .98rem; }
+.stato--tabella.is-aperto { color: var(--gomma); }
+.stato--tabella.is-aperto::before { background: #2E7D32; box-shadow: 0 0 0 3px rgba(46, 125, 50, .22); }
+.settimana { width: calc(100% - 36px); margin: 6px 18px 4px; border-collapse: collapse; }
+.settimana th, .settimana td { padding: 8px 4px 7px; border-bottom: 1px dotted #BDB6B0; font: 400 1rem/1.3 var(--f-testo); text-align: left; }
+.settimana td { text-align: right; font-weight: 700; white-space: nowrap; }
+.settimana tr.chiuso th, .settimana tr.chiuso td { color: var(--grigio); font-weight: 400; }
+.settimana tr.is-today { background: rgba(244, 209, 61, .45); }
+.settimana tr.is-today th { font-weight: 700; }
+.tabella__nota { margin: 8px 18px 14px; font-size: .95rem; color: var(--grigio); }
+.mappa { margin-bottom: 16px; overflow: hidden; box-shadow: 0 0 0 3px var(--cornice); }
+.mappa iframe { display: block; width: 100%; height: 320px; border: 0; }
+.indirizzo { margin: 0 0 16px; }
+.indirizzo div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--riga); }
+.indirizzo dt { font: 700 .86rem/1.5 var(--f-titoli); letter-spacing: .1em; text-transform: uppercase; color: var(--blu); }
+.indirizzo dd { margin: 0; font-weight: 600; }
+.orari__azioni { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+
+/* domande */
+.domande { max-width: 820px; }
+.domande details { border-bottom: 1px solid var(--riga); }
+.domande summary { padding: 14px 4px 12px; font: 700 1.4rem/1.2 var(--f-titoli); cursor: pointer; }
+.domande details p { max-width: 46em; margin: 0 0 16px; padding: 0 4px; }
+
+/* ── la chiusura: di nuovo il muro, con l'insegna ── */
+.piede { background: var(--muro) var(--piastrelle) repeat; color: #F2EEEA; }
+.piede__dentro { max-width: 900px; margin: 0 auto; padding: 46px var(--gutter) 96px; text-align: center; }
+.piede__insegna { display: inline-flex; flex-direction: column; align-items: center; margin: 0 0 18px; padding: 12px 22px 10px; background: var(--giallo); box-shadow: inset 0 0 0 3px var(--cornice); }
+.piede__insegna .marchio__df { font-size: 2rem; }
+.piede__insegna .marchio__sotto { font-size: .82rem; }
+.piede__dove, .piede__orario, .piede__legale { margin: 0 0 8px; }
+.piede__legale { font-size: .95rem; color: #E0DAD5; }
+.piede a { color: #FFFFFF; }
+.piede__cred { max-width: 54em; margin: 18px auto 10px; font-size: .95rem; color: #E0DAD5; }
+.piede__su { font-weight: 700; }
+
+/* ── reveal (plumbing) ── */
+.js .reveal { opacity: 0; }
+.js .reveal.in-view { opacity: 1; }
+html:not(.js) .reveal { opacity: 1; }
+.reduced-motion .reveal { opacity: 1 !important; }
+
+/* ── la barra e la lightbox ── */
+.action-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; background: var(--gomma); border-top: 3px solid var(--giallo); transform: translateY(100%); transition: transform .25s; }
+.action-bar.is-visible { transform: translateY(0); }
+.action-bar a { display: flex; align-items: center; justify-content: center; min-height: 54px; color: #fff; font: 700 1.08rem var(--f-testo); text-decoration: none; }
+.action-bar a:first-child { background: var(--rosso-testo); }
+#lightbox { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(22, 22, 22, .94); }
+#lightbox[hidden] { display: none !important; }
+#lightbox img { width: auto; max-width: min(1400px, 100%); max-height: 88vh; }
+#lightboxClose { position: absolute; top: 14px; right: 16px; width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, .6); border-radius: 50%; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; }
+
+/* ── le larghezze ── */
+@media (max-width: 359px) {
+  .testata__dentro { gap: 6px; }
+  .marchio { gap: 7px; }
+  .marchio__gomma { width: 32px; height: 32px; }
+  .marchio__df { font-size: 1.22rem; }
+  .marchio__sotto { font-size: .64rem; letter-spacing: .08em; }
+  .lingue button { min-width: 31px; }
+  .insegna { padding: 12px 16px 10px; }
+  .voce__corpo { gap: 9px; font-size: .94rem; }
+}
+@media (min-width: 560px) {
+  .chiama { display: inline-flex; }
+  .legenda { grid-template-columns: 1fr 1fr; }
+  .voce--data { grid-column: 1 / -1; }
+}
+@media (min-width: 760px) {
+  .action-bar { display: none; }
+  .piede__dentro { padding-bottom: 46px; }
+  .officina { grid-template-columns: minmax(0, 1.4fr) minmax(0, .9fr); gap: 34px; }
+  .recensioni { grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+  .orari { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 36px; }
+}
+@media (min-width: 900px) {
+  .insegne { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+}
+@media (min-width: 1040px) {
+  :root { --testata-h: 70px; }
+  .testata__dentro { gap: 16px; }
+  .marchio { flex: none; }
+  .voci { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-left: 30px; }
+  .voci a { padding: 4px 1px 2px; color: var(--blu); font: 800 1.14rem var(--f-titoli); letter-spacing: .04em; text-transform: uppercase; text-decoration: none; }
+  .voci a:hover, .voci a[aria-current="true"] { color: var(--rosso-testo); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  .burger { display: none; }
+  .apertura__dentro { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 44px; padding-top: 34px; }
+  .recensioni { grid-template-columns: repeat(3, 1fr); }
+}
+
+/*GOMMA*/
+/* generato da _dfg_firma.mjs: lo stato d'attesa della gomma (la posizione d'ingresso, un giro e mezzo prima di «205») */
+.firma-attesa #gommaRuota { transform: rotate(563.88deg); transform-origin: 220px 246px; }
+/*/GOMMA*/
