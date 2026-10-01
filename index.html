@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <script>(function(){var r=document.documentElement;r.classList.remove('no-js');
 /* la firma: finché main.js non parte la gomma resta nella posizione d'ingresso; se il codice non arriva, dopo 2,5 s va allo stato finale */
 try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('firma-attesa');window.__attesaGomma=setTimeout(function(){r.classList.remove('firma-attesa')},2500)}}catch(e){}})()</script>
@@ -20,15 +21,77 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@600;700;800&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js?v=1" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["LocalBusiness","TireShop"],"name":"D.F. Gomme","legalName":"D.F Gomme di Di Berardino Fabio","vatID":"IT11316570156","foundingDate":"1994","description":"Gommista in Via Walter Tobagi 13 a Milano: montaggio, equilibratura, convergenza, riparazione delle forature, auto e moto; centro di montaggio per le gomme comprate online.","url":"https://rotenzark.github.io/df-gomme-via-tobagi/","image":"https://rotenzark.github.io/df-gomme-via-tobagi/img/og.jpg","telephone":"+39 02 8912 1798","address":{"@type":"PostalAddress","streetAddress":"Via Walter Tobagi 13","postalCode":"20143","addressLocality":"Milano","addressRegion":"MI","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":45.44001,"longitude":9.14728},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"08:15","closes":"12:15"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:15","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"14:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:15","closes":"12:15"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"72","bestRating":"5"}}
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "TireShop"
+  ],
+  "name": "D.F. Gomme",
+  "legalName": "D.F Gomme di Di Berardino Fabio",
+  "vatID": "IT11316570156",
+  "foundingDate": "1994",
+  "description": "Gommista in Via Walter Tobagi 13 a Milano: montaggio, equilibratura, convergenza, riparazione delle forature, auto e moto; centro di montaggio per le gomme comprate online.",
+  "url": "https://rotenzark.github.io/df-gomme-via-tobagi/",
+  "image": "https://rotenzark.github.io/df-gomme-via-tobagi/img/og.jpg",
+  "telephone": "+39 02 8912 1798",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Walter Tobagi 13",
+    "postalCode": "20143",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.44001,
+    "longitude": 9.14728
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "08:15",
+      "closes": "12:15"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:15",
+      "closes": "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "14:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:15",
+      "closes": "12:15"
+    }
+  ]
+}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -194,12 +257,12 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <h2 id="diconoT" class="capitolo__titolo" data-i18n="d.titolo">La parola che torna: onesto</h2>
     <p class="voto voto--centro"><b class="voto__n">4,8</b> <span class="stelle" aria-hidden="true" style="--voto:.96"></span> <span class="voto__su" data-i18n="d.voto">su Google, 72 recensioni</span></p>
     <ul class="recensioni">
-      <li class="recensione reveal"><p class="recensione__testo">«Ho preso un chiodo mentre andavo a lavoro. Visto la saracinesca aperta mi avvicino per la riparazione. In meno di 10 min ero in viaggio. Gentili, rapidi ed efficaci. Consigliatissimi.»</p><p class="recensione__chi"><b>Fab Bea</b> <span data-i18n="d.a3">Google, 3 anni fa</span></p></li>
-      <li class="recensione reveal"><p class="recensione__testo">«Il mio ragazzo aveva problemi con una gomma che continuava a sgonfiarsi, stamattina è passato qui senza appuntamento e nonostante ciò in un'ora ha sistemato […]. Il gestore è stato simpatico e gentilissimo, oltre che super competente. Torneremo sicuramente!»</p><p class="recensione__chi"><b>Giada</b> <span data-i18n="d.m8">Google, 8 mesi fa</span></p></li>
-      <li class="recensione reveal"><p class="recensione__testo">«Il mio gommista di fiducia da ormai 20 anni .un esempio di professionalità e onestà»</p><p class="recensione__chi"><b>Cesare Ghidini</b> <span data-i18n="d.a6">Google, 6 anni fa</span></p></li>
-      <li class="recensione reveal"><p class="recensione__testo">«Fabio è molto attento e disponibile. Il centro DF Gomme è presente in molti portali per la consegna diretta degli pneumatici e questo evita di doversi sobbarcare il trasporto da casa all officina. Anche per le moto»</p><p class="recensione__chi"><b>Atlantica Brezza</b> <span data-i18n="d.m11">Google, 11 mesi fa</span></p></li>
-      <li class="recensione reveal"><p class="recensione__testo">«Dopo 7 anni dal precedente cambio gomme, scelgo la medesima officina memore dell'ottimo giudizio di allora. Nulla è cambiato: professionalità, cortesia, gentilezza, celerità […]. Consigliatissimo!!»</p><p class="recensione__chi"><b>Raffaele Milisenna</b> <span data-i18n="d.a3">Google, 3 anni fa</span></p></li>
-      <li class="recensione reveal"><p class="recensione__testo">«bravo onesto e sopratuttto rapido. Consigliato sono cliente da 2 anni con un parco auto di 10 autovetture. Un saluto da michael»</p><p class="recensione__chi"><b>Michael Anoni</b> <span data-i18n="d.a10">Google, 10 anni fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«Ho preso un chiodo mentre andavo a lavoro. Visto la saracinesca aperta mi avvicino per la riparazione. In meno di 10 min ero in viaggio. Gentili, rapidi ed efficaci. Consigliatissimi.»</p><p class="recensione__chi"><b>Fab Bea</b> <span data-i18n="d.a3">Google, 3 anni fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«Il mio ragazzo aveva problemi con una gomma che continuava a sgonfiarsi, stamattina è passato qui senza appuntamento e nonostante ciò in un'ora ha sistemato […]. Il gestore è stato simpatico e gentilissimo, oltre che super competente. Torneremo sicuramente!»</p><p class="recensione__chi"><b>Giada</b> <span data-i18n="d.m8">Google, 8 mesi fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«Il mio gommista di fiducia da ormai 20 anni .un esempio di professionalità e onestà»</p><p class="recensione__chi"><b>Cesare Ghidini</b> <span data-i18n="d.a6">Google, 6 anni fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«Fabio è molto attento e disponibile. Il centro DF Gomme è presente in molti portali per la consegna diretta degli pneumatici e questo evita di doversi sobbarcare il trasporto da casa all officina. Anche per le moto»</p><p class="recensione__chi"><b>Atlantica Brezza</b> <span data-i18n="d.m11">Google, 11 mesi fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«Dopo 7 anni dal precedente cambio gomme, scelgo la medesima officina memore dell'ottimo giudizio di allora. Nulla è cambiato: professionalità, cortesia, gentilezza, celerità […]. Consigliatissimo!!»</p><p class="recensione__chi"><b>Raffaele Milisenna</b> <span data-i18n="d.a3">Google, 3 anni fa</span></p></li>
+      <li class="recensione reveal"><p lang="it" class="recensione__testo">«bravo onesto e sopratuttto rapido. Consigliato sono cliente da 2 anni con un parco auto di 10 autovetture. Un saluto da michael»</p><p class="recensione__chi"><b>Michael Anoni</b> <span data-i18n="d.a10">Google, 10 anni fa</span></p></li>
     </ul>
     <p class="dicono__nota"><span data-i18n="d.nota">Dalle recensioni su Google, come sono state scritte; i tagli sono segnati […]. La frase in apertura viene da un&#39;altra recensione.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=D.F.+Gomme+Di+Di+Berardino+Fabio%2C+Via+Walter+Tobagi+13%2C+Milano" target="_blank" rel="noopener" data-i18n="d.tutte">Tutte le recensioni su Google</a></p>
   </section>
@@ -228,7 +291,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
       </div>
       <div class="orari__dove">
         <div class="mappa reveal">
-          <iframe title="Mappa: D.F. Gomme, Via Walter Tobagi 13, Milano" data-i18n-title="o.mappa" src="https://maps.google.com/maps?q=D.F.%20Gomme%2C%20Via%20Walter%20Tobagi%2013%2C%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="mappa-clic" data-mappa-clic style="--mappa-h: 400px"><template><iframe title="Mappa: D.F. Gomme, Via Walter Tobagi 13, Milano" data-i18n-title="o.mappa" src="https://maps.google.com/maps?q=D.F.%20Gomme%2C%20Via%20Walter%20Tobagi%2013%2C%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></template><div class="mappa-clic__velo"><a class="mappa-clic__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=D.F.+Gomme%2C+Via+Walter+Tobagi+13%2C+Milano" target="_blank" rel="noopener">Mostra la mappa</a><p class="mappa-clic__nota">La mappa è di Google: aprendola, Google riceve il tuo indirizzo IP e può usare i suoi cookie.</p></div></div>
         </div>
         <dl class="indirizzo">
           <div><dt data-i18n="o.dove">Dove</dt><dd data-i18n="o.dovev">Via Walter Tobagi 13, 20143 Milano</dd></div>
@@ -260,8 +323,8 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <p class="piede__insegna" aria-hidden="true"><span class="marchio__df">D.F. Gomme</span> <span class="marchio__sotto">Assistenza pneumatici</span></p>
     <p class="piede__dove">Via Walter Tobagi 13, 20143 Milano · <a href="tel:+390289121798" class="intero">02 8912 1798</a></p>
     <p class="piede__orario" data-i18n="f.orario">Lunedì–giovedì 8:15–12:15 e 14–18 · venerdì 8:15–12:30 e 14–18 · sabato 8:15–12:15</p>
-    <p class="piede__legale">D.F Gomme di Di Berardino Fabio · P.IVA 11316570156</p>
-    <p class="piede__cred" data-i18n="f.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · le foto sono loro, dalla scheda Google, con le marche coperte; orari e recensioni da Google, i lavori dalle recensioni, dalla loro insegna e dai portali di pneumatici (settembre 2026). La gomma l&#39;abbiamo disegnata noi: la misura è un esempio.</p>
+    <p lang="it" class="piede__legale">D.F Gomme di Di Berardino Fabio · P.IVA 11316570156</p>
+    <p class="piede__cred" data-i18n="f.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · <a href="privacy.html">Privacy</a> · le foto sono loro, dalla scheda Google, con le marche coperte; orari e recensioni da Google, i lavori dalle recensioni, dalla loro insegna e dai portali di pneumatici (settembre 2026). La gomma l&#39;abbiamo disegnata noi: la misura è un esempio.</p>
     <p><a class="piede__su" href="#inizio" data-i18n="f.su">Torna su ↑</a></p>
   </div>
 </footer>
@@ -276,5 +339,6 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<script src="js/mappa-clic.js?v=1" defer></script>
 </body>
 </html>
